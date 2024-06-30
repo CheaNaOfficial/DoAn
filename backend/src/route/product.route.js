@@ -9,5 +9,6 @@ const product = (app) =>{
     app.post("/api/product/create",upload.single("Image"),prod.create)
     app.put("/api/product/update",upload.single("Image"),prod.update)
     app.delete("/api/product/delete",prod.remove)
+    app.get("/api/product/:categoryId",prod.getProductByCatetory)
 }
 module.exports = product;

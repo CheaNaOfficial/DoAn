@@ -163,6 +163,7 @@ const CategoryDas = () => {
         </Button>
       </div>
       <Table
+        style={{tableLayout:'fixed'}}
         dataSource={list}
         columns={[
           {

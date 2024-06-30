@@ -188,9 +188,9 @@ const Employee = () => {
             dataIndex: "Tel",
           },
           {
-            key: "RoleName",
-            title: "Role",
-            dataIndex: "RoleName",
+            key: "Address",
+            title: "Address",
+            dataIndex: "Address",
           },
           {
             key: "Status",
@@ -337,42 +337,20 @@ const Employee = () => {
             </Col>
             <Col span={12}>
               <Form.Item
-                label="Salary"
-                name={"Salary"}
+                label="Address"
+                name={"Address"}
                 rules={[
                   {
                     required: true,
-                    message: "Please fill in employee Salary",
+                    message: "Please fill in employee Address",
                   },
                 ]}
               >
-                <InputNumber placeholder="Salary" style={{width:'100%'}}/>
+                <Input placeholder="Address" />
               </Form.Item>
             </Col>
           </Row>
-          <Row gutter={5}>
-            <Col span={12}>
-              <Form.Item 
-                label="RoleId"
-                name={"RoleId"}
-                rules={[
-                  {
-                    required: true,
-                    message: "Please select role",
-                  },
-                ]}
-              >
-                <Select placeholder="Select role"
-                  showSearch
-                  optionFilterProp="label"
-                  >
-                  {role.map((item,index)=>(
-                    <Select.Option label={item.Name} key={index} value={item.Id}>{item.Name}</Select.Option>
-                  ))}
-                </Select>
-              </Form.Item>
-            </Col>
-          </Row>
+
 
           <Form.Item>
             <Space style={{ display: "flex", justifyContent: "right" }}>
@@ -389,3 +367,6 @@ const Employee = () => {
 };
 
 export default Employee;
+
+
+

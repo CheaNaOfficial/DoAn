@@ -3,7 +3,9 @@
 import axios from "axios";
 import { Config } from "./helper";
 import { message } from "antd";
-
+import Cookies from "js-cookie"
+const BASE_URL = "http://localhost:8081/api/";
+const TOKEN = Cookies.get("token");
 export const request = async (url="", method="get",data={}) =>{
 
     var param_get = "";
@@ -17,7 +19,7 @@ export const request = async (url="", method="get",data={}) =>{
         headers = {'Content-Type' : 'multiipart/form-data'}
     }
     return axios({
-        url : Config.base_url + url + param_get, // category/getlist
+        url : Config.base_url + url + param_get, //category/getlist
         method : method,
         data : data,
         headers : headers
@@ -35,3 +37,8 @@ export const request = async (url="", method="get",data={}) =>{
     })
 } 
 
+
+export const TokenRequest = axios.create({
+    baseURL: BASE_URL,
+    headers: { authorization: `Bearer ${TOKEN}` },
+  });

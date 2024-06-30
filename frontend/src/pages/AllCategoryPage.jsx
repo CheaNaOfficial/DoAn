@@ -2,9 +2,11 @@
 import React from 'react'
 import {Outlet} from 'react-router-dom'
 import { Carousel,Row,Col,Button} from 'antd';
-import FooterPage from '../components/Footer/FooterPage'
 import headphone from '../assets/headphone.png'
-import ProductPage from './ProductPage';
+
+import '../Styles/StylePage/AllCategoryPage.scss';
+import { MdShoppingCartCheckout } from "react-icons/md";
+import AllProduct from './AllProduct';
 const contentStyle = {
   margin: 0,
   height: '160px',
@@ -20,18 +22,18 @@ const AllCategoryPage = () => {
   }
   return (
     <div>
-      <div style={{width:'77%',height:'auto',backgroundColor:'gray',marginLeft:'200px'}}>
+      <div style={{width:'78%',height:'auto',backgroundColor:'#F1F5F8',marginLeft:'190px',paddingTop:'150px'}}>
         <Carousel afterChange={onChange}>
           <div style={{display:'flex'}}>
             <Row gutter={0}>
               <Col span={14}>
                 <div style={{marginTop:'100px',color:'white'}}>
-                  <h1 style={{textAlign:'center'}}>HEADPHONE BLUETOOTH SONY</h1>
-                  <div style={{fontSize:'15px',marginLeft:80}}>
-                    <h4>Sử dụng công nghệ AINC One Push<br/>để khử nhiễu kỹ thuật số Nghe không dây một chạm qua BLUETOOTH</h4>
+                  <h1 style={{textAlign:'center',color:'black'}}>HEADPHONE BLUETOOTH SONY</h1>
+                  <div style={{fontSize:'18px',marginLeft:80,color:'black',marginTop:'50px'}}>
+                    <p>Sử dụng công nghệ AINC One Push<br/>để khử nhiễu kỹ thuật số Nghe không dây một chạm qua BLUETOOTH</p>
                   </div>
                   <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'50px'}}>
-                    <Button style={{display:'flex',justifyContent:'center',alignItems:'center'}}>Default Button</Button>
+                    <Button style={{display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#fd7e14',border:'1px solid #fd7e14',color:'white'}}><MdShoppingCartCheckout /><span style={{marginLeft:'10px'}}>Shop Now</span></Button>
                   </div>
                 </div>
               </Col>
@@ -45,10 +47,18 @@ const AllCategoryPage = () => {
           <div style={{display:'flex'}}>
             <Row gutter={0}>
               <Col span={14}>
-                <div style={{backgroundColor:'red',height:'auto'}}> kkkk</div>
+                <div style={{marginTop:'100px',color:'white'}}>
+                  <h1 style={{textAlign:'center',color:'black'}}>HEADPHONE BLUETOOTH SONY</h1>
+                  <div style={{fontSize:'18px',marginLeft:80,color:'black',marginTop:'50px'}}>
+                    <p>Sử dụng công nghệ AINC One Push<br/>để khử nhiễu kỹ thuật số Nghe không dây một chạm qua BLUETOOTH</p>
+                  </div>
+                  <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'50px'}}>
+                    <Button style={{display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#fd7e14',border:'1px solid #fd7e14',color:'white'}}><MdShoppingCartCheckout /><span style={{marginLeft:'10px'}}>Shop Now</span></Button>
+                  </div>
+                </div>
               </Col>
               <Col span={10}>
-                <div style={{backgroundColor:'blue',height:'auto'}}>
+                <div style={{height:'auto'}}>
                   <img src={headphone} />
                 </div>
               </Col>
@@ -57,10 +67,18 @@ const AllCategoryPage = () => {
           <div style={{display:'flex'}}>
             <Row gutter={0}>
               <Col span={14}>
-                <div style={{backgroundColor:'red',height:'auto'}}> kkkk</div>
+                <div style={{marginTop:'100px',color:'white'}}>
+                  <h1 style={{textAlign:'center',color:'black'}}>HEADPHONE BLUETOOTH SONY</h1>
+                  <div style={{fontSize:'18px',marginLeft:80,color:'black',marginTop:'50px'}}>
+                    <p>Sử dụng công nghệ AINC One Push<br/>để khử nhiễu kỹ thuật số Nghe không dây một chạm qua BLUETOOTH</p>
+                  </div>
+                  <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'50px'}}>
+                    <Button style={{display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#fd7e14',border:'1px solid #fd7e14',color:'white'}}><MdShoppingCartCheckout /><span style={{marginLeft:'10px'}}>Shop Now</span></Button>
+                  </div>
+                </div>
               </Col>
               <Col span={10}>
-                <div style={{backgroundColor:'blue',height:'auto'}}>
+                <div style={{height:'auto'}}>
                   <img src={headphone} />
                 </div>
               </Col>
@@ -69,10 +87,18 @@ const AllCategoryPage = () => {
           <div style={{display:'flex'}}>
             <Row gutter={0}>
               <Col span={14}>
-                <div style={{backgroundColor:'red',height:'auto'}}> kkkk</div>
+                <div style={{marginTop:'100px',color:'white'}}>
+                  <h1 style={{textAlign:'center',color:'black'}}>HEADPHONE BLUETOOTH SONY</h1>
+                  <div style={{fontSize:'18px',marginLeft:80,color:'black',marginTop:'50px'}}>
+                    <p>Sử dụng công nghệ AINC One Push<br/>để khử nhiễu kỹ thuật số Nghe không dây một chạm qua BLUETOOTH</p>
+                  </div>
+                  <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'50px'}}>
+                    <Button style={{display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#fd7e14',border:'1px solid #fd7e14',color:'white'}}><MdShoppingCartCheckout /><span style={{marginLeft:'10px'}}>Shop Now</span></Button>
+                  </div>
+                </div>
               </Col>
               <Col span={10}>
-                <div style={{backgroundColor:'blue',height:'auto'}}>
+                <div style={{height:'auto'}}>
                   <img src={headphone} />
                 </div>
               </Col>
@@ -80,20 +106,18 @@ const AllCategoryPage = () => {
           </div>
         </Carousel>
       </div>
-    <div style={{display:'flex',justifyContent:'center',alignItems:'center',width:'77%',height:'auto',backgroundColor:'red',marginLeft:'200px',marginTop:'10px'}}>
-     <div className='main-container'>
-      <h1>hello</h1>
-      <div >
-        <ProductPage />
-      </div>
-      
-     </div>
-      {/* <div>
+
+    <div style={{display:'flex',justifyContent:'center',alignItems:'center',width:'78%',height:'auto',backgroundColor:'#F1F5F8',marginLeft:'190px',marginTop:'10px'}}> 
+      <Row gutter={[8,8]} className='main-container'>
+        <p style={{fontSize:'20px'}}><span style={{borderBottom:'2px solid #fd7e14',marginLeft:'50px'}}>All</span> <t/>Latop</p>
+        <Col style={{marginTop:'-110px',marginLeft:'-190px'}} span={24}>
+      <AllProduct/>
+        </Col>
+       
+        <Col>
         <Outlet />
-      </div> */}
-    </div>
-    <div className='main-footer'>
-      <FooterPage />
+        </Col>
+      </Row>
     </div>
     </div>
   )

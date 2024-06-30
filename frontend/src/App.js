@@ -10,8 +10,8 @@ import AllCategoryPage from './pages/AllCategoryPage';
 import RegisterPage from './pages/RegisterPage';
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
-
-
+import PosPage from './pages/PosPage';
+import Pos from './pages/Pos';
 
 
 
@@ -28,10 +28,11 @@ import PaymentMethodDas from "./pageDas/PaymentMethodDas";
 import OrderStatusDas from "./pageDas/OrderStatusDas";
 import EmployeeDas from "./pageDas/EmployeeDas";
 import ProductDas from "./pageDas/ProducDas";
-
-
-
-
+import ShoppingCart from "./pages/ShoppingCart";
+import UserDas from "./pageDas/UserDas";
+import OrderDas from "./pageDas/OrderDas";
+import AdminDas from "./pageDas/AdminDas";
+import LayoutDasLogin from "./components/Layout/LayoutDasLogin";
 
 function App() {
   return (
@@ -44,15 +45,16 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/allcategory" element={<AllCategoryPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/product" element={<ProductPage />} />
+          <Route path="/product/:catetoryId" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
+          <Route path="/pospage" element={<PosPage />} />
+          <Route path="/pos" element={<Pos />} />          
         </Route>
 
           {/* Route for dashboards */}
         <Route path="/dashboard" element={<LayoutDas/>}> 
           <Route path="categorydas" element={<CategoryDas/>} /> 
-          <Route path="logindas" element={<LoginDas />} />
-          <Route path="registerdas" element={<RegisterDas />} />
           <Route path="customerdas" element={<CustomerDas />} />
           <Route path="chartdas" element={<ChartDas />} />
           <Route path="logoutdas" element={<LogoutDas />} />
@@ -61,19 +63,29 @@ function App() {
           <Route path="order-status" element={<OrderStatusDas />} />
           <Route path="employee" element={<EmployeeDas />} />
           <Route path="productdas" element={<ProductDas />} /> 
+          <Route path="user" element={<UserDas />} />
+          <Route path="order" element={<OrderDas />} />
+          <Route path="admin" element={<AdminDas />} />
         </Route>
-{/* 
-        <Route path="/dashboard" element={<LayoutDas/>}> 
-          <Route path="categordas" element={<CategoryDas />} /> 
+
+        {/* Route for LayoutDasLogin */}
+        {/* <Route path="/layoutdaslogin" element={<LayoutDasLogin />}>
           <Route path="logindas" element={<LoginDas />} />
-          <Route path="registerdas" element={<RegisterDas />} />
-          <Route path="customerdas" element={<CustomerDas />} />
-          <Route path="chartdas" element={<ChartDas />} />
-          <Route path="logoutdas" element={<LogoutDas />} />
+          <Route path="/layoutdaslogin/registerdas" element={<RegisterDas />} />
         </Route> */}
+
+        <Route path="/layoutdaslogin" element={<LayoutDasLogin />} />
+        <Route path="/registerdas" element={<RegisterDas />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+
+
+
+
+
+

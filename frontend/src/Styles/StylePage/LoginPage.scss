@@ -1,0 +1,19 @@
+
+.main-register{
+    background-image: url("../../assets/12.jpg"); 
+    width: 78%;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    max-width: 78%;
+    margin-left: 190px;
+    height: 75vh; 
+}
+.ant-input::placeholder {
+    color: white; /* Đổi màu của placeholder */
+  }
+
+  .login-form {
+    box-shadow:  38px 38px 56px #bbb3b3,
+    -25px -25px 38px #aca5a5;
+    border: 1px solid white ;
+  }

@@ -91,55 +91,7 @@ const create = async (req,res) =>{
         logError("product.create",err,res)
     }
 }
-// const update = async (req,res) =>{
-//     try{
-//         var sql ="UPDATE product SET Name=:Name,Description=:Description,Status=:Status WHERE Id=:Id"
-//         var param = {
-//             Id : req.body.Id,
-//             Name : req.body.Name,
-//             Description : req.body.Description,
-//             Status : req.body.Status
-//         } 
-//         const [data] = await db.query(sql,param);
-//         res.json({
-//             message:data.affectedRows != 0 ? "update success!" :"something wrong!",
-//             data:data
-//         })
-//     }catch(err){
-//         logError("product.update",err,res)
-//     }
-// }
-// const remove = async (req,res) =>{
-//     try{
-        
-//         var param = {
-//             Id : req.body.Id
-//         }
-//         const [dataInfo] = await db.query("SELECT * FROM product WHERE Id=:Id",param);
-//         if(dataInfo.length > 0){
-//             var sql ="DELETE FROM product WHERE Id=:Id"
-//             const [data] = await db.query(sql,param);
-//             if(data.affectedRows){
-//             // if delete success then unlink  | remove file
-//             // filename
 
-//             await removeFile(dataInfo[0].Image) // get image from 
-//         }
-//         res.json({
-//             message:data.affectedRows != 0 ? "delete success!" :"something wrong!",
-//             data:data
-//         })
-//     }else{
-//         res.json({
-//             message: " Not found",
-//             data:true
-//         })
-//     }
-//    }catch(err){
-//     logError("product.update",err,res)
-//    }
-        
-// }
 const update = async (req,res) => {
     try{
         var {
@@ -241,13 +193,41 @@ const remove = async (req,res)=>{
         logError("product.remove",err,res)
     }
 }
+const getProductByCatetory = async (req, res) => {
+    try {
+        const categoryId = req.params.categoryId; // Extract categoryId from request param
+
+        const [dataInfo] = await db.query("SELECT * FROM product WHERE CategoryId = ?", [categoryId]);
+        if (dataInfo.length > 0) {
+            res.json({
+                data: dataInfo,
+                message: "Products retrieved successfully",
+                error: false
+            });
+        } else {
+            res.json({
+                message: "No products found for the given category",
+                error: true
+            });
+        }
+    } catch (err) {
+        // Log error and send appropriate response
+        console.error("Error retrieving products by category:", err);
+        res.status(500).json({
+            message: "Internal server error",
+            error: true
+        });
+    }
+};
+
 
 module.exports = {
     getList,
     // getOne,
     create,
     update,
-    remove
+    remove,
+    getProductByCatetory
 }
 
 

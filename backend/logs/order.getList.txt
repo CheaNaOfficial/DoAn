@@ -1,0 +1,4 @@
+[10/06/2024 01:33:36]  Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order WHERE 1=1   ORDER BY Id DESC' at line 1
+
+[10/06/2024 01:34:21]  Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order WHERE 1= NULL   ORDER BY Id DESC' at line 1
+

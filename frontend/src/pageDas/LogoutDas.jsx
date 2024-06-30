@@ -4,7 +4,7 @@ import React from 'react'
 
 const LogoutDas = () => {
   return (
-    <div>
+    <div style={{marginTop:200,color:'red'}}>
       LogoutDas
     </div>
   )

@@ -1,27 +1,7 @@
 
-
-// import React from 'react'
-// import { Outlet } from 'react-router-dom';
-
-// const LayoutDas = () => {
-//   return (
-//     <div>
-//       <div style={{backgroundColor:'blue',height:'80px'}}>
-//         <h1>MainLayoutLogin login / register</h1>
-//       </div>
-//       <Outlet />
-//     </div>
-//   )
-// }
-
-// export default LayoutDas;
-
-
-
 import React, { useEffect, useState} from 'react';
 import {
   DesktopOutlined,
-  FileOutlined,
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
@@ -29,6 +9,14 @@ import {
 import { Breadcrumb, Flex, Layout, Menu, theme } from 'antd';
 import { Outlet,useNavigate } from 'react-router-dom';
 import { getUser, isLogin, logout } from '../../config/helper';
+import logokshop from "../../assets/logokshop.png";
+import na1 from "../../assets/na1.png";
+import { FaLaptopCode } from "react-icons/fa";
+import { FiMonitor } from "react-icons/fi";
+import { RiLogoutCircleLine } from "react-icons/ri";
+import { FaUserGroup } from "react-icons/fa6";
+import { RiAdminLine } from "react-icons/ri";
+import { FaCartPlus } from "react-icons/fa6";
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
   return {
@@ -41,22 +29,13 @@ function getItem(label, key, icon, children) {
 const items = [
   getItem('Dashboard', 'chartdas', <PieChartOutlined />),
   getItem('Customer', 'customerdas', <DesktopOutlined />),
-  getItem('Employee', 'employee', <TeamOutlined />),
-  getItem('User', 'userdas', <UserOutlined />, [
-    getItem('Tom', '3'),
-    getItem('Bill', '4'),
-    getItem('Alex', '5'),
-  ]),
-  getItem('System', 'system', <UserOutlined />, [
-    getItem('Order Status', 'order-status'),
-    getItem('Payment method', 'payment-method'),
-    getItem('Role', 'role'),
-  ]),
   getItem('Category', 'categorydas', <TeamOutlined />),
-  getItem('Product', 'productdas', <TeamOutlined />), // [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-   // [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-  getItem('Files', '7', <FileOutlined />),
-  getItem('Logout', 'logoutdas', <PieChartOutlined />)
+  getItem('Product', 'productdas', <FaLaptopCode />),
+  getItem('Role', 'role', <FiMonitor />),
+  getItem('User', 'user', <FaUserGroup />),
+  getItem('Admin', 'admin', <RiAdminLine />),
+  getItem('Order', 'order', <FaCartPlus />),
+  getItem('Logout', 'logoutdas', <RiLogoutCircleLine />)
 ];
 const LayoutDas = () => {
   const user = getUser();
@@ -105,12 +84,13 @@ const LayoutDas = () => {
         >
         <div style={{display:'flex',justifyContent:'space-between',padding:5}}>
           <div style={{display:'flex'}}>
-            <dvi style={{height:40,width:40,backgroundColor:"#888"}}></dvi>
-            <div>Brand Name</div>
+            <dvi style={{height:40,width:40,backgroundColor:"#888"}}><img src={logokshop} alt="some example image" /></dvi>
+            {/* <div><img src={logokshop} alt="some example image" /></div> */}
           </div>
           <div style={{display:'flex'}}>
-            <div>{user?.Firstname}-{user?.Lastname}</div>
-            <dvi style={{height:40,width:40,backgroundColor:"#888",borderRadius:20}}></dvi>
+            <div style={{marginLeft:'-100px'}}>{user?.Firstname}-{user?.Lastname}</div>
+            <dvi><img src={na1} style={{width:40,height:40,borderRadius:20}} /></dvi>
+            
           </div>
          
         </div>
@@ -144,7 +124,7 @@ const LayoutDas = () => {
             textAlign: 'center',
           }}
         >
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+          Design By Chea Na {new Date().getFullYear()} © 2024
         </Footer>
       </Layout>
     </Layout>

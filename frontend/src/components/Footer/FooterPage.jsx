@@ -1,139 +1,78 @@
 
 
-// import React from 'react';
-// import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-
-
-
-// export default function App() {
-//   return (
-//     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
-//       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-//         <div className='me-5 d-none d-lg-block'>
-//           <span>Get connected with us on social networks:</span>
-//         </div>
-
-//         <div>
-//           <a href='' className='me-4 text-reset'>
-//             <MDBIcon style={{color:'#fd7e14'}} fab icon='facebook-f'  />
-//           </a>
-//           <a href='' className='me-4 text-reset'>
-//             <MDBIcon style={{color:'#fd7e14'}} fab icon='twitter' />
-//           </a>
-//           <a href='' className='me-4 text-reset'>
-//             <MDBIcon style={{color:'#fd7e14'}} fab icon='google' />
-//           </a>
-//           <a href='' className='me-4 text-reset'>
-//             <MDBIcon style={{color:'#fd7e14'}} fab icon='instagram' />
-//           </a>
-//           <a href='' className='me-4 text-reset'>
-//             <MDBIcon style={{color:'#fd7e14'}} fab icon='linkedin' />
-//           </a>
-//           <a href='' className='me-4 text-reset'>
-//             <MDBIcon style={{color:'#fd7e14'}} fab icon='github' />
-//           </a>
-//         </div>
-//       </section>
-
-//       <section className=''>
-//         <MDBContainer className='text-center text-md-start mt-5'>
-//           <MDBRow className='mt-3'>
-//             <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
-//               <h6 className='text-uppercase fw-bold mb-4'>
-//               <div className='logo'><b><span style={{color:'#fd7e14'}}>K-</span>Shop</b></div>
-//               </h6>
-//               <p>
-//                 Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit
-//                 amet, consectetur adipisicing elit.
-//               </p>
-//             </MDBCol>
-
-//             <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
-//               <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
-//               <p>
-//                 <a href='#!' className='text-reset'>
-//                   Angular
-//                 </a>
-//               </p>
-//               <p>
-//                 <a href='#!' className='text-reset'>
-//                   React
-//                 </a>
-//               </p>
-//               <p>
-//                 <a href='#!' className='text-reset'>
-//                   Vue
-//                 </a>
-//               </p>
-//               <p>
-//                 <a href='#!' className='text-reset'>
-//                   Laravel
-//                 </a>
-//               </p>
-//             </MDBCol>
-
-//             <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
-//               <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
-//               <p>
-//                 <a href='#!' className='text-reset'>
-//                   Pricing
-//                 </a>
-//               </p>
-//               <p>
-//                 <a href='#!' className='text-reset'>
-//                   Settings
-//                 </a>
-//               </p>
-//               <p>
-//                 <a href='#!' className='text-reset'>
-//                   Orders
-//                 </a>
-//               </p>
-//               <p>
-//                 <a href='#!' className='text-reset'>
-//                   Help
-//                 </a>
-//               </p>
-//             </MDBCol>
-
-//             <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
-//               <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
-//               <p>
-//                 <MDBIcon style={{color:'#fd7e14'}} icon='home' className='me-2' />
-//                 Phnom Penh
-//               </p>
-//               <p>
-//                 <MDBIcon style={{color:'#fd7e14'}} icon='envelope' className='me-3' />
-//                 na.c190152@sis.hust.edu.vn
-//               </p>
-//               <p>
-//                 <MDBIcon style={{color:'#fd7e14'}} icon='phone' className='me-3' /> 0347089842
-//               </p>
-//             </MDBCol>
-//           </MDBRow>
-//         </MDBContainer>
-//       </section>
-
-//       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-//         © 2024 create by :
-//         <a className='text-reset fw-bold' href='https://www.facebook.com/profile.php?id=61550118221646'>
-//         <t/> Chea Na
-//         </a>
-//       </div>
-//     </MDBFooter>
-//   );
-// }
-
-
-
-
-
 import React from 'react'
+import '../../Styles/StylePage/FooterPage.scss'
+import { CgMail } from "react-icons/cg";
+import { BsTelephonePlus } from "react-icons/bs";
+import { IoLocationOutline } from "react-icons/io5";
+import { BsFacebook } from "react-icons/bs";
+import { FaTelegramPlane } from "react-icons/fa";
+import { BsInstagram } from "react-icons/bs";
+import { ImLinkedin2 } from "react-icons/im";
+import { useNavigate } from 'react-router-dom';
 
 const FooterPage = () => {
+  const navigate = useNavigate();
+
+
   return (
     <div>
-      FooterPage
+      <div className="Footer" >
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 col-lg-5 col-12 ft-1">
+                            <h3><span>K-</span>SHOP</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ea quo ex ullam laboriosam magni totam, facere eos iure voluptate.</p>
+                            <div className="footer-icons">
+                                <i class="fa-brands fa-facebook"><a href='https://www.facebook.com/profile.php?id=61550118221646'><BsFacebook /></a></i>
+                                <i class="fa-brands fa-twitter"><a href='https://web.telegram.org/k/'><FaTelegramPlane /></a></i>
+                                <i class="fa-brands fa-instagram"><a href='https://www.linkedin.com/in/na-chea-0849452b4/'><BsInstagram /></a></i>
+                                <i class="fa-brands fa-linkedin-in"><a href='https://www.linkedin.com/in/na-chea-0849452b4/'><ImLinkedin2 /></a></i>
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-lg-3 col-12 ft-2">
+                            <h5>Quick Links</h5>
+                            <ul>
+                            <li className="nav-item">
+                                    <a className="" href="/">Trang chủ</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/product">Laptop MSI</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/monitors">Monitors</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/mouse">Mouse</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/mouse">HP</a>
+                                </li><li className="nav-item">
+                                    <a className="" href="/mouse">Acer</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/mouse">Dell</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/mouse">Asus Rog Strix</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="" href="/mouse">MackBook</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="col-md-6 col-lg-4 col-12 ft-3">
+                            <h5>Liên Hệ</h5>
+                            <p><CgMail />  +84 347089842</p>
+                            <p><BsTelephonePlus />  na.c190152@sis.hust.edu.vn</p>
+                            <p><IoLocationOutline /><a href="https://maps.app.goo.gl/1Zt1Z75BUDTMys6Y9" style={{textDecoration:'none',color:'#fff'}}>23 Tạ Quang Bửu, Bách Khoa, Hai Bà Trưng, Hà Nội  </a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='Last-footer'>
+                <p style={{color:'#fff'}}>Design By Chea Na © 2024</p>
+            </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import { getUser } from '../config/helper';
 const AboutUsPage = () => {
   const user = getUser();
   return (
-    <div>
+    <div style={{paddingTop:'200px'}}>
       <div>{JSON.stringify(user)}</div>
     </div>
   )

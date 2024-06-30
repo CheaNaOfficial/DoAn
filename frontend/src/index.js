@@ -4,12 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import { CartProvider } from './Context/CartContext';
+import {Elements} from "@stripe/react-stripe-js"
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe('pk_test_51PNGzYP9QtsT4YaeEfU9LStUcXRToD66LErpKQgtATB28LBEWJJdKHaSt7jvPSsnVmJlPV8zfeyCmbwE3JE6dvE600C8nqtTUf');
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <Elements stripe={stripePromise}>
+  <CartProvider>
+      <App />
+    </CartProvider>
+  </Elements>
+  
   </React.StrictMode>
 );
 
